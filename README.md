@@ -1,1 +1,5 @@
-The Dockerfiles in this repository create images to be used for building QuantLib and QuantLib-SWIG on Travis CI.
+
+```
+sudo docker run -d -p 7777:7777 --mount src=/l/cr/quantlib-dockerfiles/quantlib-jupyter,target=/home/notebooks,type=bind \
+    --name qlnb lballabio/quantlib-jupyter
+```

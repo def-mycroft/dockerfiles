@@ -9,11 +9,11 @@ RUN jupyter-nbextension install rise --py --sys-prefix
 RUN jupyter-nbextension install widgetsnbextension --py --sys-prefix \
  && jupyter-nbextension enable widgetsnbextension --py --sys-prefix
 
-EXPOSE 8888
+EXPOSE 7777
 
 RUN mkdir /notebooks
 VOLUME /notebooks
 COPY *.ipynb /notebooks/
 
-CMD jupyter notebook --no-browser --allow-root --ip=0.0.0.0 --port=8888 --notebook-dir=/notebooks
+CMD jupyter notebook --no-browser --allow-root --port=7777 --notebook-dir=/notebooks --ip='*' --NotebookApp.token='' --NotebookApp.password=''
 
